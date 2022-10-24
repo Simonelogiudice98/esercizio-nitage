@@ -8,7 +8,8 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		criptaParola("cane");
+		//criptaParola("cane");
+		converti("cane");
 		
 		
 		
@@ -33,7 +34,7 @@ public class main {
 		//creo delle array list che mi serviranno più avanti
 		ArrayList<Integer> indici = new ArrayList();
 		ArrayList<String> lettereCriptate = new ArrayList();
-		String parolaCriptata;
+		String parolaCriptata = "";
 		
 		
 		System.out.println();
@@ -67,11 +68,11 @@ public class main {
 						
 				}
 			//utilizzo il costruttore della String per creare una nuova stringa utilizzando l'array di char e la printo
-			String parolCriptata = new String(criptoArray);
+			 parolaCriptata = new String(criptoArray);
 			System.out.println();
 			System.out.println("parola inserita: " + s.toUpperCase());
 			System.out.println();
-			System.out.println( "Parola criptata: " + parolCriptata);
+			System.out.println( "Parola criptata: " + parolaCriptata);
 		}else {
 			System.out.println("inserisci una parola");
 		}
@@ -79,14 +80,33 @@ public class main {
 		 
 		
 		
-		return s;
+		return parolaCriptata;
 		
 			
 	
 	}
 	
-	
-	
-	
-	
+		public static String converti(String s) {
+			String risultato = "";
+			String stringa = s.toUpperCase();
+			
+			for(int i = 0; i < s.length();i++) {
+				
+				Character lettera = stringa.charAt(i);
+				
+				 int indici = alfabetoStringa.indexOf(lettera);
+				
+				Character lettereCriptate = disordinatoStringa.charAt(indici);
+				risultato += lettereCriptate;
+				
+				
+			}
+			System.out.println("parola inserita: " + s);
+			System.out.println("criptaggio ....");
+			System.out.println("parola criptata: " + risultato);
+			
+			return risultato;
+	}
+
 }
+
